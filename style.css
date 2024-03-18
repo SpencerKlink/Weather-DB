@@ -8,19 +8,26 @@ body {
 header {
     background-color: #007bff;
     color: white;
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px;
+    text-align: left;
     margin-bottom: 20px;
 }
 
 #search-section {
-    text-align: center;
-    margin-bottom: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+#search-label {
+    margin-bottom: 5px;
 }
 
 #city-input {
     padding: 10px;
     width: 200px;
+    margin-bottom: 10px;
 }
 
 #search-button {
@@ -28,15 +35,43 @@ header {
     cursor: pointer;
 }
 
-#search-history {
-    margin-top: 20px;
-}
-
-#current-weather, #forecast-weather {
-    margin-top: 20px;
-}
-
-#weather-results {
-    margin-top: 20px;
+.weather-box {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
     text-align: center;
+}
+
+#search-history {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.recent-search {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+#current-weather {
+    text-align: center;
+}
+
+#forecast-weather {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.forecast-day {
+    width: calc(20% - 20px); 
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 0 10px 10px 0;
 }
