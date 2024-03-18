@@ -2,11 +2,11 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px;
     margin: 0;
-    background-color: #e7e7e7;
+    background: linear-gradient(to bottom, #007bff, #007bff);
 }
 
 header {
-    background-color: #007bff;
+    background-color: #58561e;
     color: white;
     padding: 10px;
     text-align: left;
@@ -20,58 +20,83 @@ header {
     margin-bottom: 20px;
 }
 
-#search-label {
-    margin-bottom: 5px;
+#search-label, #city-input, #search-button, #search-history {
+    width: 100%;
 }
 
-#city-input {
+#city-input, #search-button {
     padding: 10px;
-    width: 200px;
     margin-bottom: 10px;
 }
 
 #search-button {
-    padding: 10px 15px;
     cursor: pointer;
-}
-
-.weather-box {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: center;
 }
 
 #search-history {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    flex-wrap: wrap; 
+    gap: 10px; 
 }
 
-.recent-search {
+#search-history button {
+    padding: 15px;
+    font-size: 1em; 
+    text-align: center;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
-    padding: 5px 10px;
     cursor: pointer;
-    margin-bottom: 5px;
 }
 
-#current-weather {
+#current-weather, #forecast-section {
+    margin-top: 20px;  
+}
+
+#forecast-section {
     text-align: center;
+    margin-top: 20px;
 }
 
 #forecast-weather {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
+    justify-content: center; 
+    gap: 10px; 
 }
 
 .forecast-day {
-    width: calc(20% - 20px); 
+    flex-basis: 18%;
+    padding: 10px;
     background-color: #fff;
     border: 1px solid #ccc;
-    padding: 10px;
-    margin: 0 10px 10px 0;
+}
+
+.weather-box {
+    margin: 20px auto; 
+    max-width: 600px; 
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #search-section {
+        flex-direction: column;
+    }
+
+    #search-history {
+        justify-content: center;
+    }
+
+    #search-history button {
+        font-size: 0.9em; 
+    }
+
+    .forecast-day {
+        flex-basis: 100%;  o
+        margin: 10px 0; 
+    }
 }

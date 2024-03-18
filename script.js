@@ -40,25 +40,26 @@ function displayWeather(data) {
 
 function displayForecast(data) {
     var forecastElement = document.getElementById('forecast-weather');
-    forecastElement.innerHTML = '<h2>5-Day Forecast</h2>';
+    forecastElement.innerHTML = ''; 
+
     for (let i = 0; i < data.list.length; i += 8) {
         var forecast = data.list[i];
         var date = new Date(forecast.dt * 1000).toLocaleDateString();
         var iconCode = forecast.weather[0].icon;
         var iconUrl = `https://openweathermap.org/img/wn/${iconCode}.png`;
-        forecastElement.innerHTML += `
-            <div class="forecast-day">
-                <h3>${date}</h3>
-                <img src="${iconUrl}" alt="${forecast.weather[0].main}">
-                <p><strong>Temp:</strong> ${forecast.main.temp}°F</p>
-                <p><strong>Weather:</strong> ${forecast.weather[0].main}</p>
-                <p><strong>Humidity:</strong> ${forecast.main.humidity}%</p>
-                <p><strong>Wind Speed:</strong> ${forecast.wind.speed} m/s</p>
-            </div>
+        var forecastBox = document.createElement('div');
+        forecastBox.className = 'forecast-day';
+        forecastBox.innerHTML = `
+            <h3>${date}</h3>
+            <img src="${iconUrl}" alt="${forecast.weather[0].main}">
+            <p><strong>Temp:</strong> ${forecast.main.temp}°F</p>
+            <p><strong>Weather:</strong> ${forecast.weather[0].main}</p>
+            <p><strong>Humidity:</strong> ${forecast.main.humidity}%</p>
+            <p><strong>Wind Speed:</strong> ${forecast.wind.speed} m/s</p>
         `;
+        forecastElement.appendChild(forecastBox); 
     }
 }
-
 function saveSearchHistory(city) {
     console.log(`Saving ${city} to search history`);
     var history = JSON.parse(localStorage.getItem('searchHistory')) || [];
