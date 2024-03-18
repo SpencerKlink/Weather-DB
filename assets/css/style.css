@@ -2,15 +2,25 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px;
     margin: 0;
-    background: linear-gradient(to bottom, #007bff, #007bff);
+    background-color: black;
+
 }
 
 header {
-    background-color: #58561e;
+    background: linear-gradient(to right, #ecf808, #02cdf5, #1a8314);
     color: white;
     padding: 10px;
-    text-align: left;
-    margin-bottom: 20px;
+    text-align: center;
+    animation: moveGradient 10s linear infinite;
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
 }
 
 #search-section {
@@ -45,6 +55,7 @@ header {
     text-align: center;
     background-color: #f0f0f0;
     border: 1px solid #ccc;
+    border-radius: 20px;
     cursor: pointer;
 }
 
@@ -66,10 +77,13 @@ header {
 }
 
 .forecast-day {
-    flex-basis: 18%;
-    padding: 10px;
     background-color: #fff;
     border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px 5px;
+    text-align: center;
+    border-radius: 20px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .weather-box {
@@ -78,7 +92,8 @@ header {
     padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     text-align: center;
 }
 
